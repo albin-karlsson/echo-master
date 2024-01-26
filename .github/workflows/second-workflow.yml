@@ -1,0 +1,18 @@
+name: Second workflow
+on: push
+jobs:
+  test-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4.1.1
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4.0.0
+        with:
+          dotnet-version: '8'
+      - name: Setup dependencies # Installera dependencies
+        run: dotnet restore
+      - name: Build project
+        run: dotnet build --no-restore
+      - name: Print message
+        run: echo "Everything is OK!"
