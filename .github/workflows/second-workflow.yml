@@ -20,6 +20,7 @@ jobs:
         run: dotnet test
   print-success-message:
     runs-on: ubuntu-latest
+    needs: test-project
     steps:
       - name: Print success message
         run: echo "Tests successful!"
