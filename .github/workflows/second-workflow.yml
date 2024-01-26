@@ -18,3 +18,5 @@ jobs:
         run: echo "Running tests now..."
       - name: Test code
         run: dotnet test
+      - name: Print message
+        run: echo "Everything is OK!"
